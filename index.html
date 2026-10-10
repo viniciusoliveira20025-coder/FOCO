@@ -377,7 +377,7 @@ $("bkg").onclick=()=>{const t=$("bkt");t.value=bkData();t.focus();t.select();try
 $("bkp").onclick=()=>doImport($("bkt").value.trim());
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 
-const ENG_PLAN=[[["Revisão",60]],[["Grammar",40],["Speaking",50]],[["Listening",60],["Writing",30]],[["Grammar",40],["Speaking",50]],[["Listening",60],["Reading",30]],[["Speaking",60],["Vocabulary",30]],[["Writing",60],["Reading",30]]];
+const ENG_PLAN=[[["Revisão", 60]], [["Grammar", 40], ["Speaking", 50]], [["Listening", 60], ["Writing", 30]], [["Grammar", 40], ["Speaking + Episoden", 50]], [["Listening", 60], ["Reading", 30]], [["Speaking + Episoden", 60], ["Vocabulary", 30]], [["Writing", 60], ["Reading", 30]]];
 function engSync(d){const day=S.c[d]=S.c[d]||{tasks:[],box:""};let ch=0;
  if(d>=TODAY&&!day.eng){day.eng=1;ch=1;const dow=new Date(d+"T12:00").getDay();
   (ENG_PLAN[dow]||[]).forEach(([n,m],i)=>{day.tasks.push({id:id(),t:"Inglês: "+n+" ("+m+" min)",a:0,src:"ing",si:i,min:m})})}
